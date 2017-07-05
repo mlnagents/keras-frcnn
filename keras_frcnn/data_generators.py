@@ -18,7 +18,7 @@ def get_img_output_length(width, height):
 		filter_sizes = [7, 3, 1, 1]
 		stride = 2
 		for filter_size in filter_sizes:
-			input_length = (input_length - filter_size + stride) // stride
+			input_length = (input_length - filter_size + stride) // stride #по идее вместо первого stride должно быть zero padding равное трем
 		return input_length
 
 	return get_output_length(width), get_output_length(height)
