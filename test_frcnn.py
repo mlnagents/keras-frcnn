@@ -120,7 +120,7 @@ classifier = nn.classifier(feature_map_input, roi_input, C.num_rois, nb_classes=
 model_rpn = Model(img_input, rpn_layers)
 model_classifier_only = Model([feature_map_input, roi_input], classifier)
 
-model_classifier = Model([feature_map_input, roi_input], classifier)
+model_classifier = Model([feature_map_input, roi_input], classifier) # эта модель нужно только для того что бы загрузить общие для model_rpn и model_classifier_only веса. 
 
 model_rpn.load_weights(C.model_path, by_name=True)
 model_classifier.load_weights(C.model_path, by_name=True)
