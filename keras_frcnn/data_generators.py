@@ -44,7 +44,7 @@ def intersection(ai, bi):
 def iou(a, b):
 	# a and b should be (x1,y1,x2,y2)
 
-	if a[0] >= a[2] or a[1] >= a[3] or b[0] >= b[2] or b[1] >= b[3]:
+	if a[0] >= a[2] or a[1] >= a[3] or b[0] >= b[2] or b[1] >= b[3]: #проверка если х0>=х1 (у норм бокса такого быть не может) и т.д. у бокса и у якоря
 		return 0.0
 
 	area_i = intersection(a, b)
